@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CarResponseModel } from 'src/app/models/carResponseModel';
+import { RentalResponseModel } from 'src/app/models/rentalResponseModel';
 import { Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CarService {
-  apiUrl = 'https://localhost:44343/api/Cars/getallwithdetail';
+export class RentalService {
+  apiUrl = 'https://localhost:44343/api/Rentals/getallwithdetail';
   constructor(private httpClient: HttpClient, private titleService: Title) {}
 
-  getCars(): Observable<CarResponseModel> {
-    return this.httpClient.get<CarResponseModel>(this.apiUrl);
+  getRentals(): Observable<RentalResponseModel> {
+    return this.httpClient.get<RentalResponseModel>(this.apiUrl);
   }
 
   public setTitle(newTitle: string) {
